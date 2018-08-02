@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Root from './Root';
+import SecondaryEntry from './SecondaryEntry';
 import Store from '../../../src';
 
 Store.init({
@@ -13,3 +14,5 @@ Store.init({
 }, true);
 
 ReactDOM.render(<Root />, document.getElementById('app'));
+
+ReactDOM.render(<SecondaryEntry />, document.getElementById('Secondary'));
