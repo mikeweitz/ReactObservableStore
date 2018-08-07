@@ -54,9 +54,12 @@ class Store {
      * @param {Object} data        The initial data to be stored
      */
     init(data, log = false) {
+
         this.showLog = log;
+        console.log('set log level to', log);
         if (!data) throw new Error('Invalid store initialization');
         this.storage = assign({}, Store.sanitizeData(data));
+        return this;
     }
 
     /**

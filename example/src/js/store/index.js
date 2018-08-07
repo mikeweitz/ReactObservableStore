@@ -1,6 +1,6 @@
 import Store from '../../../../src';
 
-window.store = Store.init({
+Store.init({
     namespace: {
         loading: false,
         title: {
@@ -9,4 +9,6 @@ window.store = Store.init({
     }
 }, true);
 
-export default window.store
+console.log('store entry', window.store)
+
+export default Store
