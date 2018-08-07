@@ -13,10 +13,15 @@ const paths = {
 
 // Webpack configuration
 module.exports = {
-  entry: path.join(paths.JS, 'index.js'),
+  entry: {
+    store: path.join(paths.JS, 'store/index.js'),
+    bar: path.join(paths.JS, 'apps/bar/index.js'),
+    foo: path.join(paths.JS, 'apps/foo/index.js')
+  },
   output: {
     path: paths.DIST,
-    filename: 'app.bundle.js'
+    filename: '[name].bundle.js',
+    library: '[name]'
   },
   plugins: [
     new HtmlWebpackPlugin({
