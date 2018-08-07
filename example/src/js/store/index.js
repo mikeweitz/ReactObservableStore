@@ -9,6 +9,6 @@ Store.init({
     }
 }, true);
 
-console.log('store entry', window.store)
+console.log('store entry')
 
 export default Store

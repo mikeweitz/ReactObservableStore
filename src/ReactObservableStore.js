@@ -124,6 +124,7 @@ class ReactStore {
      * @return {Component}                              The resulting class
      */
     withStore(namespace, WrappedComponent) {
+        console.log('Observable withStore', namespace, instance)
         return instance.strategy.register(namespace, instance.store, WrappedComponent);
     }
 }

@@ -1,16 +1,24 @@
 import React from 'react';
 import Store, { withStore } from '../../../src/ReactObservableStore';
 import { updateSync, updateAsync } from './actions';
-import SubComponent from './SubComponent';
+// import SubComponent from './SubComponent';
 import Loading from './Loading';
 import { withRouter } from 'react-router'
 import { Link } from 'react-router-dom';
 
 class Title extends React.Component {
+	constructor(props) {
+		super(props)
+		console.log('Title component', this.props)
+	}
+
 	componentWillMount() {
 		updateAsync('Update async on will mount')
 	}
+
 	render () {
+		const Store = window.store.default;
+
 		return this.props.loading ? <Loading /> : (
 			<div>
 				<div><em>title</em> from Store: {this.props.title.nested}</div>
@@ -21,4 +29,4 @@ class Title extends React.Component {
 		)
 	}
 }
-export default withRouter(withStore('namespace', Title));
+export default withRouter(Title);

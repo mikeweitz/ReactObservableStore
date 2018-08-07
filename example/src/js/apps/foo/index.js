@@ -1,15 +1,15 @@
-import { withStore } from '../../../../../src/ReactObservableStore';
+import Store, { withStore } from '../../../../../src/ReactObservableStore';
 // import { addArticle } from "../js/actions/index";
 
 window.store = store;
-console.log('foo/index', window.store)
+// console.log('foo/index', window.store)
 // window.addArticle = addArticle;
 
 
 import React from 'react';
-import { ReactDOM, render } from "react-dom";
+import ReactDOM, { render } from "react-dom";
 import { HashRouter as Router, Switch, Route, withRouter } from 'react-router-dom';
-import Main from './main';
+import Root from './Root';
 // import { Provider } from "react-redux";
 import Title from '../../Title';
 
@@ -38,15 +38,17 @@ console.log("foo index")
 //
 // export default withRouter(Foo)
 
-	render (
-		<Router>
-			<Switch>
-				<Route exact path="/" component={Main} />
-				<Route path="/title/:param" render={(props) => <Title foo="bar" {...props} />} />
-			</Switch>
-		</Router>,
-		document.getElementById('foo')
-	)
+
+
+	// render (
+	// 	<Router>
+	// 		<Switch>
+	// 			<Route exact path="/" component={Main} />
+	// 			<Route path="/title/:param" render={(props) => <Title foo="bar" {...props} />} />
+	// 		</Switch>
+	// 	</Router>,
+	// 	document.getElementById('foo')
+	// )
 
 
 ReactDOM.render(<Root />, document.getElementById('app'));

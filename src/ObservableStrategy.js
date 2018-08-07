@@ -19,6 +19,7 @@ class ObservableStrategy {
          * The observers
          * @type {Array}
          */
+        console.log('ObservableStrategy constructor')
         this.observers = {};
     }
 
@@ -27,6 +28,7 @@ class ObservableStrategy {
      * @param  {String} namespace The namespace
      */
     init(namespace) {
+        console.log('ObservableStrategy init', namespace)
         this.observers[namespace] = {};
     }
 
@@ -37,6 +39,7 @@ class ObservableStrategy {
      * @param {Function} fn         The component updater
      */
     subscribe(namespace, fn) {
+        console.log('ObservableStrategy subscribe', namespace, fn, this.observers)
         if (!this.observers[namespace]) throw new Error('Invalid namespace');
         const id = ObservableStrategy.generateObserverId();
         this.observers[namespace][id] = fn;
@@ -87,6 +90,8 @@ class ObservableStrategy {
     register(namespace, store, WrappedComponent) {
 
         //var me = this;
+
+        console.log('ObservableStrategy register', namespace, store)
 
         // Get component class name
         var name = (WrappedComponent.prototype.constructor.displayName

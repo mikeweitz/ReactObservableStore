@@ -1,5 +1,8 @@
-import Store from '../../../src/ReactObservableStore';
-let Store = window.store.default
+// import Store from '../../../src/ReactObservableStore';
+// let Store = window.store.default
+
+const Store = window.store.default;
+
 export const updateSync = (newTitle) => {
     Store.set('namespace.title.nested', newTitle);
 };
